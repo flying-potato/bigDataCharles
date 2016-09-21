@@ -14,7 +14,6 @@ public class MaxTemperatureReducer extends MapReduceBase implements Reducer<Text
 		while (values.hasNext()) {
 			maxValue = Math.max(maxValue, values.next().get());
 		}
-
 		output.collect(key, new IntWritable(maxValue));
 	}
 }

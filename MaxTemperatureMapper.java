@@ -26,4 +26,5 @@ implements Mapper<LongWritable, Text, Text, IntWritable> {
 			output.collect(new Text(year), new IntWritable(airTemperature));
 		}
 	}
+
 }
