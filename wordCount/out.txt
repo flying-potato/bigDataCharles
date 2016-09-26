@@ -1,0 +1,4 @@
+dec = 0
+java = 0
+hackathon = 3
+chicago = 1
