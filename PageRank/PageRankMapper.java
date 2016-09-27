@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Arrays;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -18,7 +19,7 @@ implements Mapper<LongWritable, Text, Text, Text> {
 		String[] sp = line.split(" ");
 		String source = sp[0];
 		String[] despage = Arrays.copyOfRange(sp, 1, sp.length-1);
-		double PRval = sp[sp.length - 1];
+		double PRval = Double.parseDouble(sp[sp.length - 1]);
 
 		String descomb = despage[0];
 		for(int i=1; i<despage.length; i++){
