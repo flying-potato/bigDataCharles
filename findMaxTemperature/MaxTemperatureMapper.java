@@ -10,8 +10,7 @@ import org.apache.hadoop.mapred.Reporter;
 public class MaxTemperatureMapper extends MapReduceBase
 implements Mapper<LongWritable, Text, Text, IntWritable> {
 	private static final int MISSING = 9999;
-	public void map(LongWritable key, Text value,
-		OutputCollector<Text, IntWritable> output, Reporter reporter)
+	public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)
 		throws IOException {
 		String line = value.toString();
 		String year = line.substring(15, 19);
