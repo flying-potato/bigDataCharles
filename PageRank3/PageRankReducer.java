@@ -4,11 +4,12 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class PageRankReducer extends Reducer<Text, Text, Text, Text> {
+public class PageRankReducer 
+	extends Reducer<Text, Text, Text, Text> {
 
 	@Override
-	public void reduce(Text key, Iterator<Text> values, Context context)
-	throws IOException, InterruptedException {
+	public void reduce(Text key, Iterable<Text> values, Context context)
+		throws IOException, InterruptedException {
 		double finalPR = 0;
 		String des="";
 		String result;
