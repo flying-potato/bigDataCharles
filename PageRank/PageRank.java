@@ -22,6 +22,8 @@ public class PageRank {
 		conf.setReducerClass(PageRankReducer.class);
 		conf.setOutputKeyClass(Text.class);
 		conf.setOutputValueClass(Text.class);
+		conf.setNumReduceTasks(1);
+
 		JobClient.runJob(conf);
 	}
 }
