@@ -13,8 +13,8 @@ public class PageRankReducer
 		double finalPR = 0;
 		String des="";
 		String result;
-		while (values.hasNext()) {
-			String eachvalue  = values.next().toString();
+		for (Text value: values) {
+			String eachvalue  = values.toString();
 			try{
 				String[] sp = eachvalue.split(" ");
 				double eachPR =  Double.parseDouble(sp[1]);
