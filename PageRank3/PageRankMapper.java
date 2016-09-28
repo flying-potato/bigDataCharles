@@ -13,7 +13,7 @@ public class PageRankMapper extends Mapper<LongWritable, Text, Text, Text> {
 		throws IOException, InterruptedException {
 		String line = value.toString();
 
-		String[] sp = line.split(" ");
+		String[] sp = line.split("\b|\t");
 		String source = sp[0];
 		String[] despage = Arrays.copyOfRange(sp, 1, sp.length-1);
 		double PRval = Double.parseDouble(sp[sp.length - 1]);

@@ -8,8 +8,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class PageRank3 {
 	public static void main(String[] args) throws Exception {
 		int i = 0;
-
-
 		while (i<3){
 		     Job job = new Job();
 		     job.setJarByClass(PageRank3.class);
