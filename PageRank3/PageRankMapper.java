@@ -1,13 +1,10 @@
 import java.io.IOException;
-import java.util.Arrays;
-import org.apache.hadoop.io.DoubleWritable;
+
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.MapReduceBase;
-import org.apache.hadoop.mapred.Mapper;
-import org.apache.hadoop.mapred.OutputCollector;
-import org.apache.hadoop.mapred.Reporter;
+import org.apache.hadoop.mapreduce.Mapper;
+
 
 public class PageRankMapper extends MapReduceBase
 implements Mapper<LongWritable, Text, Text, Text> {
