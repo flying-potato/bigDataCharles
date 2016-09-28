@@ -4,9 +4,11 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class PageRankReducer extends MapReduceBase implements Reducer<Text, Text, Text, Text> {
-	public void reduce(Text key, Iterator<Text> values,OutputCollector<Text, Text> output, Reporter reporter)
-	throws IOException {
+public class PageRankReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+
+	@Override
+	public void reduce(Text key, Iterator<Text> values, Context context)
+	throws IOException, InterruptedException {
 		double finalPR = 0;
 		String des="";
 		String result;
@@ -21,6 +23,6 @@ public class PageRankReducer extends MapReduceBase implements Reducer<Text, Text
 			}
 		}
 		result = des + " " + Double.toString(finalPR);
-		output.collect(key, new Text(result));
+		context.write(key, new Text(result));
 	}
 }
