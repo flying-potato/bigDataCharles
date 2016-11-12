@@ -22,8 +22,8 @@ public class DistrictPeople {
 	FileInputFormat.addInputPath(job, new Path(args[0]));
 	FileOutputFormat.setOutputPath(job, new Path(args[1]));
 	
-	job.setMapperClass(DisrictPeopleMapper.class);
-	job.setReducerClass(DisrictPeopleReducer.class);
+	job.setMapperClass(DistrictPeopleMapper.class);
+	job.setReducerClass(DistrictPeopleReducer.class);
 
 	job.setNumReduceTasks(1);
 
