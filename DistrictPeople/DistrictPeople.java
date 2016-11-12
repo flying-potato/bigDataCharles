@@ -28,7 +28,7 @@ public class DistrictPeople {
 	job.setNumReduceTasks(1);
 
 	job.setOutputKeyClass(Text.class);
-	job.setOutputValueClass(IntWritable.class);
+	job.setOutputValueClass(Text.class);
 
 	System.exit(job.waitForCompletion(true)?0:1);
 	}

@@ -6,7 +6,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class DistrictPeopleReducer
-	extends Reducer<Text, Text, Text, IntWritable> {
+	extends Reducer<Text, Text, Text, Text> {
 
 	@Override
 	public void reduce(Text key, Iterable<Text> values, Context context)
@@ -28,13 +28,14 @@ public class DistrictPeopleReducer
 			min_enter = (enter<min_enter?enter:min_enter); 
 			
 			
-			int exit  = Integer.parseInt(value_split[1]);
-			max_exit = (exit>max_exit?exit:max_exit);
-			min_exit = (exit<min_exit?exit:min_exit)
+			// int exit  = Integer.parseInt(value_split[1]);
+			// max_exit = (exit>max_exit?exit:max_exit);
+			// min_exit = (exit<min_exit?exit:min_exit)
 		}
 		diff_enter = max_enter - min_enter;
-		diff_exit = max_exit - min_exit;
+		String out_diff_enter = String.valueOf(diff_enter);
+		// diff_exit = max_exit - min_exit;
 
-		context.write(key, new IntWritable(diff_enter+diff_exit) );
+		context.write(key, new Text(out_diff_enter));
 	}
 }
