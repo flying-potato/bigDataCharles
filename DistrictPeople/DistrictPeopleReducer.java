@@ -13,7 +13,7 @@ public class DistrictPeopleReducer
 		throws IOException, InterruptedException {
 		int min_enter = Integer.MAX_VALUE;
 		int max_enter = Integer.MIN_VALUE;
-		int diff_enter;
+
 
 		int min_exit = Integer.MAX_VALUE;
 		int max_exit = Integer.MIN_VALUE;
@@ -32,7 +32,7 @@ public class DistrictPeopleReducer
 			// max_exit = (exit>max_exit?exit:max_exit);
 			// min_exit = (exit<min_exit?exit:min_exit);
 		}
-		diff_enter = max_enter - min_enter;
+		int diff_enter = max_enter-min_enter;
 		String out_diff_enter = String.valueOf(diff_enter);
 		// diff_exit = max_exit - min_exit;
 
