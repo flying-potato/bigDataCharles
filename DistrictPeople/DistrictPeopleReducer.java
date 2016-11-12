@@ -19,23 +19,27 @@ public class DistrictPeopleReducer
 		int max_exit = Integer.MIN_VALUE;
 		int diff_exit;
 
+		// for (Text value : values){
+		// 	String svalue = value.toString();
+		// 	String[] value_split = svalue.split(";");
+
+		// 	int enter = Integer.parseInt(value_split[0]);
+		// 	max_enter = (enter>max_enter?enter:max_enter); 
+		// 	min_enter = (enter<min_enter?enter:min_enter); 
+			
+		// 	// int exit  = Integer.parseInt(value_split[1]);
+		// 	// max_exit = (exit>max_exit?exit:max_exit);
+		// 	// min_exit = (exit<min_exit?exit:min_exit);
+		// }
+		// int diff_enter = max_enter - min_enter;
+		// String out_diff_enter = String.valueOf(diff_enter);
+		// // diff_exit = max_exit - min_exit;
+		// context.write(key, new Text(out_diff_enter));
+		
 		for (Text value : values){
-			String svalue = value.toString();
-			String[] value_split = svalue.split(";");
-
-			int enter = Integer.parseInt(value_split[0]);
-			max_enter = (enter>max_enter?enter:max_enter); 
-			min_enter = (enter<min_enter?enter:min_enter); 
-			
-			
-			// int exit  = Integer.parseInt(value_split[1]);
-			// max_exit = (exit>max_exit?exit:max_exit);
-			// min_exit = (exit<min_exit?exit:min_exit);
+			String k = key.toString();
+			if(k.equals("FLATBUSH AVE"))
+				context.write(key, value);
 		}
-		int diff_enter = max_enter-min_enter;
-		String out_diff_enter = String.valueOf(diff_enter);
-		// diff_exit = max_exit - min_exit;
-
-		context.write(key, new Text(out_diff_enter));
 	}
 }
