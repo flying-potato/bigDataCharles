@@ -16,7 +16,7 @@ public class DistrictPeopleMapper
 		String line = value.toString();
 		// line = line.toLowerCase();
 		
-		SPEC_DATE = "08/11/2015"; //pass DATE as an argument
+		String SPEC_DATE = "08/11/2015"; //pass DATE as an argument
 
 		if(line.contains(SPEC_DATE)){
 			String[] split = line.split(",");

@@ -30,7 +30,7 @@ public class DistrictPeopleReducer
 			
 			// int exit  = Integer.parseInt(value_split[1]);
 			// max_exit = (exit>max_exit?exit:max_exit);
-			// min_exit = (exit<min_exit?exit:min_exit)
+			// min_exit = (exit<min_exit?exit:min_exit);
 		}
 		diff_enter = max_enter - min_enter;
 		String out_diff_enter = String.valueOf(diff_enter);
