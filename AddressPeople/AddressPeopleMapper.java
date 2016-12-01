@@ -14,7 +14,7 @@ public class AddressPeopleMapper
 		String line = value.toString();
 		// line = line.toLowerCase();
 		String[] sp = line.split(",");
-		String timeadd =  sp[0]+","sp[1];
+		String timeadd =  sp[0]+","+sp[1];
 		String peoplestr = sp[2];
 		int people = Integer.parseInt(peoplestr);
 		context.write(new Text(timeadd), new IntWritable(people));
