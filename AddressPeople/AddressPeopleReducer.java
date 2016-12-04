@@ -11,8 +11,8 @@ public class AddressPeopleReducer extends MapReduceBase implements Reducer<Text,
 	public void reduce(Text key, Iterator<IntWritable> values,OutputCollector<Text, IntWritable> output, Reporter reporter)
 	throws IOException {
 		int total = 0;
-		for (IntWritable value : values){
-			total = total + value.get();
+		while(values.hasNext()){
+			total = total +  values.next().get();
 		}
 		output.collect(key, new IntWritable(total));
 	}
