@@ -7,16 +7,13 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
-public class AddressPeopleReducer
-	extends Reducer<Text, IntWritable, Text, IntWritable> {
-
-	@Override
-	public void reduce(Text key, Iterable<IntWritable> values, Context context)
-		throws IOException, InterruptedException {
+public class AddressPeopleReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+	public void reduce(Text key, Iterator<IntWritable> values,OutputCollector<Text, IntWritable> output, Reporter reporter)
+	throws IOException {
 		int total = 0;
 		for (IntWritable value : values){
 			total = total + value.get();
 		}
-		context.write(key, new IntWritable(total));
+		output.collect(key, new IntWritable(total));
 	}
 }
