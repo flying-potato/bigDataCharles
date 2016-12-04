@@ -19,7 +19,7 @@ implements Mapper<LongWritable, Text, Text, IntWritable> {
 		String peoplestr = sp[2];
 		int people = Integer.parseInt(peoplestr);
 
-		output.collect(new Text(year), new IntWritable(people));
+		output.collect(new Text(timeadd), new IntWritable(people));
 	}
 
 }
