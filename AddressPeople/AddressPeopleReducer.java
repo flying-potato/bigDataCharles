@@ -10,10 +10,10 @@ public class AddressPeopleReducer
 	@Override
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 		throws IOException, InterruptedException {
-		int Total = 0;
+		int total = 0;
 		for (IntWritable value : values){
-			Total = Total + value.get();
+			total = total + value.get();
 		}
-		context.write(key, new IntWritable(Total));
+		context.write(key, new IntWritable(total));
 	}
 }

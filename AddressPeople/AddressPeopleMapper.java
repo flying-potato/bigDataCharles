@@ -6,7 +6,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class AddressPeopleMapper
-	extends Mapper<LongWritable, Text, Text, IntWritable> {
+	extends Mapper<LongWritable, Text, Text, IntWritable> { //LongWritable is file offset
 	private static final int MISSING = 9999;
 
 	@Override
