@@ -7,7 +7,7 @@ import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobClient;
 import org.apache.hadoop.mapred.JobConf;
 
-public class AddressPeopleMapReduce {
+public class AddressPeople{
 	public static void main(String[] args) throws IOException {
 		if (args.length != 2) {
 			System.err.println("Usage: AddressPeople <input path> <output path>");
