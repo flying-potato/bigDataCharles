@@ -10,3 +10,6 @@ jar -cvf AddressPeople.jar *.class
 hadoop jar AddressPeople.jar AddressPeople  /user/cl4056/finalproject/proc150214.txt /user/cl4056/finalproject/outproc150214
 
 hdfs dfs -cat /user/cl4056/finalproject/outproc*/*
+
+
+

@@ -21,6 +21,7 @@ public class AddressPeople{
 		conf.setReducerClass(AddressPeopleReducer.class);
 		conf.setOutputKeyClass(Text.class);
 		conf.setOutputValueClass(IntWritable.class);
+		conf.setNumReduceTasks(1);
 		JobClient.runJob(conf);
 	}
 }
